@@ -12,6 +12,9 @@
 		4C2CD4542A56334C00E5A0F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD4532A56334C00E5A0F3 /* Assets.xcassets */; };
 		4C2CD4582A56334C00E5A0F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C2CD4572A56334C00E5A0F3 /* Preview Assets.xcassets */; };
 		4C2CD4602A5635A900E5A0F3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CD45F2A5635A900E5A0F3 /* Color.swift */; };
+		4C2CD4662A56390A00E5A0F3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CD4652A56390A00E5A0F3 /* HomeView.swift */; };
+		4C2CD46A2A56FAF300E5A0F3 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CD4692A56FAF300E5A0F3 /* CircleButtonView.swift */; };
+		4C2CD46C2A57005800E5A0F3 /* CircleButtonAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CD46B2A57005800E5A0F3 /* CircleButtonAnimationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		4C2CD4552A56334C00E5A0F3 /* Crypto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Crypto.entitlements; sourceTree = "<group>"; };
 		4C2CD4572A56334C00E5A0F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C2CD45F2A5635A900E5A0F3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		4C2CD4652A56390A00E5A0F3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4C2CD4692A56FAF300E5A0F3 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		4C2CD46B2A57005800E5A0F3 /* CircleButtonAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonAnimationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			children = (
 				4C2CD44F2A56334B00E5A0F3 /* CryptoApp.swift */,
 				4C2CD45E2A56359600E5A0F3 /* Extensions */,
+				4C2CD4612A56387F00E5A0F3 /* Core */,
 				4C2CD4512A56334B00E5A0F3 /* ContentView.swift */,
 				4C2CD4532A56334C00E5A0F3 /* Assets.xcassets */,
 				4C2CD4552A56334C00E5A0F3 /* Crypto.entitlements */,
@@ -78,6 +85,56 @@
 				4C2CD45F2A5635A900E5A0F3 /* Color.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4C2CD4612A56387F00E5A0F3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CD4672A56FAC900E5A0F3 /* Components */,
+				4C2CD4622A5638BA00E5A0F3 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4C2CD4622A5638BA00E5A0F3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CD4632A5638C300E5A0F3 /* ViewModels */,
+				4C2CD4642A5638D000E5A0F3 /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4C2CD4632A5638C300E5A0F3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4C2CD4642A5638D000E5A0F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CD4652A56390A00E5A0F3 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4C2CD4672A56FAC900E5A0F3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CD4682A56FAD400E5A0F3 /* CircleButton */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4C2CD4682A56FAD400E5A0F3 /* CircleButton */ = {
+			isa = PBXGroup;
+			children = (
+				4C2CD4692A56FAF300E5A0F3 /* CircleButtonView.swift */,
+				4C2CD46B2A57005800E5A0F3 /* CircleButtonAnimationView.swift */,
+			);
+			path = CircleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +208,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2CD4522A56334B00E5A0F3 /* ContentView.swift in Sources */,
+				4C2CD4662A56390A00E5A0F3 /* HomeView.swift in Sources */,
 				4C2CD4602A5635A900E5A0F3 /* Color.swift in Sources */,
+				4C2CD46A2A56FAF300E5A0F3 /* CircleButtonView.swift in Sources */,
 				4C2CD4502A56334B00E5A0F3 /* CryptoApp.swift in Sources */,
+				4C2CD46C2A57005800E5A0F3 /* CircleButtonAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
