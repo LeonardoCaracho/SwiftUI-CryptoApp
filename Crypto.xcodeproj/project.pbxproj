@@ -19,6 +19,7 @@
 		4C2CD4712A5DA07700E5A0F3 /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CD4702A5DA07700E5A0F3 /* CoinRowView.swift */; };
 		4C2CD4732A5DA2C400E5A0F3 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CD4722A5DA2C400E5A0F3 /* PreviewProvider.swift */; };
 		4C2CD4752A5DC0A500E5A0F3 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2CD4742A5DC0A500E5A0F3 /* Double.swift */; };
+		4CC9D8E62A5F756700E2F4FC /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9D8E52A5F756700E2F4FC /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4C2CD4702A5DA07700E5A0F3 /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		4C2CD4722A5DA2C400E5A0F3 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		4C2CD4742A5DC0A500E5A0F3 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		4CC9D8E52A5F756700E2F4FC /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		4C2CD4632A5638C300E5A0F3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4CC9D8E52A5F756700E2F4FC /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2CD4712A5DA07700E5A0F3 /* CoinRowView.swift in Sources */,
+				4CC9D8E62A5F756700E2F4FC /* HomeViewModel.swift in Sources */,
 				4C2CD4522A56334B00E5A0F3 /* ContentView.swift in Sources */,
 				4C2CD4662A56390A00E5A0F3 /* HomeView.swift in Sources */,
 				4C2CD4602A5635A900E5A0F3 /* Color.swift in Sources */,
