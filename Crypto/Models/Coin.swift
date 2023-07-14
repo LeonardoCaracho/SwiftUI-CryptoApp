@@ -12,11 +12,11 @@ struct Coin: Identifiable, Codable {
     let image: String
     let currentPrice: Double
     let marketCap, marketCapRank, fullyDilutedValuation: Int?
-    let totalVolume, high24H, low24H: Int?
+    let totalVolume, high24H, low24H: Double?
     let priceChange24H, priceChangePercentage24H: Double?
-    let marketCapChange24H: Int?
+    let marketCapChange24H: Double?
     let marketCapChangePercentage24H: Double?
-    let circulatingSupply, totalSupply, maxSupply, ath: Int?
+    let circulatingSupply, totalSupply, maxSupply, ath: Double?
     let athChangePercentage: Double?
     let athDate: String?
     let atl, atlChangePercentage: Double?
@@ -70,4 +70,3 @@ struct Coin: Identifiable, Codable {
 struct SparklineIn7D: Codable {
     let price: [Double]?
 }
-
