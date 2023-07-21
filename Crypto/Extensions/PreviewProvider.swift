@@ -219,4 +219,8 @@ class DeveloperPreview {
         ]),
         priceChangePercentage24HInCurrency: 3952.64,
         currentHoldings: 1.5)
+    
+    let stat1 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: 0.06)
+    let stat2 = Statistic(title: "Market Cap", value: "$2.56Tr")
+    let stat3 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: -0.10)
 }

@@ -8,9 +8,15 @@
 import Foundation
 import Combine
 
+let stat1 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: 0.06)
+let stat2 = Statistic(title: "Market Cap", value: "$2.56Tr")
+let stat3 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: -0.10)
+let stat4 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: -0.10)
+
 class HomeViewModel: ObservableObject {
     @Published var allCoins: [Coin] = []
     @Published var portfolioCoins: [Coin] = []
+    @Published var statistics: [Statistic] = []
     
     @Published var searchText: String = ""
     
@@ -19,6 +25,7 @@ class HomeViewModel: ObservableObject {
     
     init() {
         addSubscribers()
+        statistics = [stat1, stat2, stat3, stat4]
     }
     
     func addSubscribers() {
