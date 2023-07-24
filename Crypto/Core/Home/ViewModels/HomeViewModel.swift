@@ -8,11 +8,6 @@
 import Foundation
 import Combine
 
-let stat1 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: 0.06)
-let stat2 = Statistic(title: "Market Cap", value: "$2.56Tr")
-let stat3 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: -0.10)
-let stat4 = Statistic(title: "Market Cap", value: "$2.56Tr", percentageChange: -0.10)
-
 class HomeViewModel: ObservableObject {
     @Published var allCoins: [Coin] = []
     @Published var portfolioCoins: [Coin] = []
@@ -20,21 +15,28 @@ class HomeViewModel: ObservableObject {
     
     @Published var searchText: String = ""
     
-    private let dataService = CoinDataService()
+    private let coinDataService = CoinDataService()
+    private let marketDataService = MarketDataService()
     private var cancellables = Set<AnyCancellable>()
     
     init() {
         addSubscribers()
-        statistics = [stat1, stat2, stat3, stat4]
     }
     
     func addSubscribers() {
         $searchText
-            .combineLatest(dataService.$allCoins)
+            .combineLatest(coinDataService.$allCoins)
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
             .map(filterCoins)
             .sink { [weak self] returnedCoins in
                 self?.allCoins = returnedCoins
+            }
+            .store(in: &cancellables)
+        
+        marketDataService.$marketData
+            .map(mapGlobalMarketData)
+            .sink {[weak self] returnedStats in
+                self?.statistics = returnedStats
             }
             .store(in: &cancellables)
     }
@@ -51,5 +53,27 @@ class HomeViewModel: ObservableObject {
             coin.symbol.lowercased().contains(lowercaseText) ||
             coin.id.lowercased().contains(lowercaseText)
         }
+    }
+    
+    private func mapGlobalMarketData(marketData: MarketData?) -> [Statistic] {
+        var stats: [Statistic] = []
+        
+        guard let data = marketData else {
+            return stats
+        }
+        
+        let marketCap = Statistic(title: "Market Cap", value: data.marketCap, percentageChange: data.marketCapChangePercentage24HUsd)
+        let volume = Statistic(title: "24h Volume", value: data.volume)
+        let btcDominance = Statistic(title: "BTC Dominance", value: data.btcDominance)
+        let porfolio = Statistic(title: "Portfolio Value", value: "$0.00", percentageChange: 0)
+        
+        stats.append(contentsOf: [
+            marketCap,
+            volume,
+            btcDominance,
+            porfolio
+        ])
+        
+        return stats
     }
 }
