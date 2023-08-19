@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct XMarkButton: View {
-    @Environment(\.dismiss) private var dismiss
+    @Binding var close: Bool
     
     var body: some View {
         Button(action: {
-            dismiss()
+            close = false
         }, label: {
             Image(systemName: "xmark")
                 .font(.headline)
@@ -22,6 +22,6 @@ struct XMarkButton: View {
 
 struct XMarkButton_Previews: PreviewProvider {
     static var previews: some View {
-        XMarkButton()
+        XMarkButton(close: .constant(true))
     }
 }

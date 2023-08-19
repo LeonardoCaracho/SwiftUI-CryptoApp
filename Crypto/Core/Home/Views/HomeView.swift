@@ -21,7 +21,7 @@ struct HomeView: View {
             Color.theme.background
                 .ignoresSafeArea()
                 .sheet(isPresented: $showPorfolioView) {
-                    PortfolioView()
+                    PortfolioView(showPorfolioView: $showPorfolioView)
                         .environmentObject(vm)
                 }
             
@@ -37,15 +37,29 @@ struct HomeView: View {
                 if !showPortfolio {
                     allCoinsList
                         .transition(.move(edge: .leading))
-                } else {
-                    portfolioCoinsList
-                        .transition(.move(edge: .trailing))
+                }
+                
+                if showPortfolio {
+                    ZStack(alignment: .top) {
+                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                            Text("You haven't added coins to your portfolio yet! Click the + button to get started 🤪")
+                                .font(.callout)
+                                .foregroundColor(Color.theme.accent)
+                                .fontWeight(.medium)
+                                .multilineTextAlignment(.center)
+                                .padding(50)
+                        } else {
+                            portfolioCoinsList
+                                .transition(.move(edge: .trailing))
+                        }
+                    }
+                    .transition(.move(edge: .leading))
                 }
                 
                 Spacer(minLength: 0)
             }
             .sheet(isPresented: $showSettingsView, content: {
-                SettingsView()
+                SettingsView(showSettingsView: $showSettingsView)
             })
         }
         .background(

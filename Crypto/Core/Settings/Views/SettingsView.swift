@@ -12,6 +12,7 @@ struct SettingsView: View {
     let youtubeUrl = URL(string: "https://youtube.com")!
     let coinGeckoUrl = URL(string: "https://www.coingecko.com")!
     let personalUrl = URL(string: "https://github.com/LeonardoCaracho")!
+    @Binding var showSettingsView: Bool
     
     var body: some View {
         NavigationView {
@@ -26,7 +27,7 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    XMarkButton()
+                    XMarkButton(close: $showSettingsView)
                 }
             }
         }
@@ -35,7 +36,7 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(showSettingsView: .constant(true))
     }
 }
 
