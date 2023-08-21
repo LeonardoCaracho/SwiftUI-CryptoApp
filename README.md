@@ -8,7 +8,7 @@ An App developed using Swift and SwiftUI to track your crypto currencies portfol
 </p>
 
 <p>
-  <img width="300px" src="https://raw.githubusercontent.com/LeonardoCaracho/ios-CryptoApp/main/screenshots/screenshot-4.png?token=GHSAT0AAAAAACEMZ5KSGOJPYIOJ3S6TQ3O4ZHD6ORA">
+  <img width="300px" src="https://raw.githubusercontent.com/LeonardoCaracho/ios-CryptoApp/main/screenshots/screenshot-4.png">
   <img width="300px" src="https://raw.githubusercontent.com/LeonardoCaracho/ios-CryptoApp/main/screenshots/screenshot-2.png?token=GHSAT0AAAAAACEMZ5KS6ADXQKCZRD4WVPSQZHD6N6A">
 </p>
 
